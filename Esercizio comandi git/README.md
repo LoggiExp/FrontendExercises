@@ -1,1 +1,1 @@
-this is an ecercise for git commands
+this is an exercise for git commands
