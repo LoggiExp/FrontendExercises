@@ -1,0 +1,2 @@
+- guardare approfondimenti sull'accessibilità
+- implementare l'accessibilità nel codice
