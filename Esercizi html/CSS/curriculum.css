@@ -1,0 +1,12 @@
+body {
+    margin-left: 3rem;
+    background-color: beige;
+}
+.namePhoto {
+    display: flex;
+    align-items: center;
+}
+img {
+    align-content: right;
+    margin-right: 30rem;
+}
