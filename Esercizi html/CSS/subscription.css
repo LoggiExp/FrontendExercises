@@ -19,9 +19,6 @@ input, textarea, button {
     border-width: 2px;
     border-style: solid;
 }
-.aut {
-    font-size: 0.7rem;
-}
 #text, #form {
     display:flex;
     justify-content: center;
