@@ -1,2 +1,2 @@
-- guardare approfondimenti sull'accessibilità
-- implementare l'accessibilità nel codice
+To do list:
+- how to make a table responsive
