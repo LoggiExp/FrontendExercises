@@ -1,0 +1,16 @@
+table {
+    text-align: center;
+    border-style: solid;
+    border-color: black;
+    border-collapse: collapse;
+    min-width: 30rem;
+}
+.head {
+    background-color: rgb(255, 140, 98);
+}
+.odd {
+    background-color: rgba(73, 73, 73, 0.3);
+}
+.even {
+    background-color: rgba(124, 124, 124, 0.1);
+}
