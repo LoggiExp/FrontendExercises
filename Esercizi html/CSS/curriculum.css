@@ -1,12 +1,24 @@
 body {
-    margin-left: 3rem;
+    display: flex;
+    flex-flow: column;
     background-color: beige;
+    min-width: 20rem;    
+}
+address {
+    margin: 2rem;
 }
 .namePhoto {
     display: flex;
-    align-items: center;
+    justify-content: space-around;
 }
-img {
-    align-content: right;
-    margin-right: 30rem;
+.description {
+    max-width: 60rem;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+}
+.aut {
+    display: flex;
+    align-self: end;
+    font-size: 0.7rem;
 }
