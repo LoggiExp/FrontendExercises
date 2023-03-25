@@ -1,0 +1,56 @@
+/* prima di width */
+@media (max-width: 767px) {
+    .container__mainText {
+        font-size: small;
+    }
+
+    .container__cards {
+        flex-direction: column;
+    }
+
+}
+/* dopo width */
+@media (min-width: 768px) {
+
+}
+/* sempre */
+.container {
+    display: grid;
+}
+
+.container__header {
+    grid-row: 1;
+}
+
+.container__mainText {
+    grid-row: 2;
+}
+
+.container__cards {
+    grid-row: 3;
+    display: flex;
+}
+
+.container__cards__1, .container__cards__2, .container__cards__3 {
+    width: 200px;
+}
+
+.container__text {
+    grid-row: 4;
+    display: flex;
+    align-items: baseline;
+}
+
+.container__text__a--space {
+    margin-left: 0.3rem;
+}
+
+.container__footer {
+    grid-row: 5;
+    display: flex;
+    align-items: baseline;
+}
+
+.container__footer__a--space {
+    margin-left: 0.3rem;
+}
