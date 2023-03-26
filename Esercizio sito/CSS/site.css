@@ -1,7 +1,4 @@
 @media (max-width: 767px) {
-    .container__mainText {
-        font-size: small;
-    }
 
     .container__cards {
         flex-direction: column;
@@ -15,6 +12,10 @@
 }
 
 @media (min-width: 768px) {
+    .container__mainText {
+        font-size: xx-large;
+    }
+
     .container__cards {
         margin-top: 50px;
     }
@@ -36,21 +37,31 @@ body {
     background-image: url("https://images03.nicepage.com/c461c07a441a5d220e8feb1a/9c4ea5b834cd5c25a814ec11/z-min.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    position: relative;
-    background-size: cover;
-    
+    /* position: relative; */
+    background-size: cover;    
 }
 
 .container {
     display: grid;
 }
 
-.container__header {
-    grid-row: 1;
+.header{
+    position: relative;
+    top: 0;
+    height: 70px;
+    width: 100%;
+}
+
+.header__fixed {
+    position: fixed;
+    top: 0;
+    background-color: beige;
+    height: 70px;
+    width: 100%;
+    z-index: 1;
 }
 
 .container__mainText {
-    position: relative;
     grid-row: 2;
     display: flex;
     justify-content: center;
@@ -58,10 +69,11 @@ body {
 }
 
 .container__cards {
+    position: relative;
     grid-row: 4;
     display: flex;
     justify-content: center;
-    position: relative;
+    z-index: 0;
 }
 
 .container__cards__line {
@@ -69,7 +81,9 @@ body {
     background-color: white;
     height: 5px;
     width: 130px;
+    left: calc(50% - 75px);
     top: -40px;
+    z-index: 0;
 }
 
 .container__cards__1, .container__cards__2, .container__cards__3 {
