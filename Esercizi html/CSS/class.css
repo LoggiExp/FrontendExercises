@@ -1,16 +1,24 @@
-table {
+@keyframes background {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+.table {
     text-align: center;
     border-style: solid;
     border-color: black;
     border-collapse: collapse;
     min-width: 30rem;
 }
-.head {
-    background-color: rgb(255, 140, 98);
+.table__head {
+    animation-name: background;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
-.odd {
+.table__odd {
     background-color: rgba(73, 73, 73, 0.3);
 }
-.even {
+.table__even {
     background-color: rgba(124, 124, 124, 0.1);
 }
