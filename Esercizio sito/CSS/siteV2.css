@@ -31,6 +31,16 @@ main {
     .boxes div {
         margin: 10px 40px;
     }
+
+    .boxes :nth-child(1) h3::after{
+        content: "";
+        height: 7px;
+        width: 180px;
+        background-color: white;
+        position: absolute;
+        top: -70px;
+        left: calc(50% - 90px);
+    }
 }
 
 @media (min-width: 769px){
@@ -45,6 +55,16 @@ main {
     .boxes div:last-child {
         margin-right: 40px;
     }
+    
+    .boxes :nth-child(2) h3::after{
+        content: "";
+        height: 7px;
+        width: 180px;
+        background-color: white;
+        position: absolute;
+        top: -70px;
+        left: calc(50% - 90px);
+    }
 }
 
 .boxes {
@@ -54,6 +74,7 @@ main {
 }
 
 .boxes div {
+    position: relative;
     border: 3px solid;
     padding: 20px;
     min-width: 100px;
@@ -63,7 +84,20 @@ main {
 }
 
 .boxes i {
-    padding: 50px;
+    padding: 50px 30px;
+    border-radius: 50%;
+}
+
+.boxes div:nth-child(1) i {
+    background-color: orange;
+}
+
+.boxes div:nth-child(2) i {
+    background-color: dodgerblue;
+}
+
+.boxes div:nth-child(3) i {
+    background-color: aqua;
 }
 
 .boxes div:nth-child(1) {
@@ -76,6 +110,20 @@ main {
 
 .boxes div:nth-child(3) {
     border-color: aqua;
+}
+
+.infoImg {
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.infoImg a {
+    color: white;
+    text-decoration-line: none;
+    padding-bottom: 3px;
+    border-bottom: 3px solid orange;
 }
 
 footer {
