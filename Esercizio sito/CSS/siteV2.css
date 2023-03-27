@@ -1,0 +1,91 @@
+body {
+    color: white;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/9c4ea5b834cd5c25a814ec11/z-min.jpg) no-repeat;
+    background-position: top;
+    background-size: cover;
+    position: relative;
+}
+
+main {
+    grid-row: 1;
+    text-align: center;
+}
+
+.mainText {
+    font-size: 4rem;
+    padding-top: 60px;
+}
+
+@media (max-width: 768px){
+    .mainText {
+        font-size: 2rem;
+    }
+    
+    .boxes {
+        flex-wrap: wrap;
+        margin: 100px 40px;
+    }
+    
+    .boxes div {
+        margin: 10px 40px;
+    }
+}
+
+@media (min-width: 769px){
+    .boxes {
+        margin: 100px auto;
+    }
+
+    .boxes div:first-child {
+        margin-left: 40px;
+    }
+
+    .boxes div:last-child {
+        margin-right: 40px;
+    }
+}
+
+.boxes {
+    padding: auto 200px;
+    display: flex;
+    max-width: 1100px;
+}
+
+.boxes div {
+    border: 3px solid;
+    padding: 20px;
+    min-width: 100px;
+    flex-shrink: 1;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.boxes i {
+    padding: 50px;
+}
+
+.boxes div:nth-child(1) {
+    border-color: orange;
+}
+
+.boxes div:nth-child(2) {
+    border-color: dodgerblue;
+}
+
+.boxes div:nth-child(3) {
+    border-color: aqua;
+}
+
+footer {
+    height: 97.6px;
+    width: 100%;
+    background-color: rgb(56, 56, 56);
+    position: relative;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+}
