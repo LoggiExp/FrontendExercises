@@ -41,10 +41,6 @@ body {
     background-size: cover;    
 }
 
-.container {
-    display: grid;
-}
-
 .header{
     position: relative;
     top: 0;
@@ -59,6 +55,30 @@ body {
     height: 70px;
     width: 100%;
     z-index: 1;
+}
+
+.header__icons {
+    color: grey;
+    height: 70px;
+}
+
+.header__icons__cross {
+    position: absolute;
+    top: calc(50% - 10px);
+    right: 10px;
+}
+
+.header__icons__devices {
+    position: absolute;
+    top: 22px;
+    left: calc(50% - 90px);
+    display: flex;
+    width: 180px;
+    justify-content: space-between;
+}
+
+.container {
+    display: grid;
 }
 
 .container__mainText {
@@ -98,12 +118,37 @@ body {
     border-color: orange;
 }
 
+.container__cards__1__draw {
+    background-color: orange;
+}
+
 .container__cards__2 {
     border-color: dodgerblue;
 }
 
+.container__cards__2__draw {
+    background-color: dodgerblue;
+}
+
 .container__cards__3 {
     border-color: aqua;
+}
+
+.container__cards__3__draw {
+    background-color: aqua;
+}
+
+.container__cards__1__draw, .container__cards__2__draw, .container__cards__3__draw {
+    position: relative;
+    height: 90px;
+    width: 90px;
+    left: calc(50% - 45px);
+    border-radius: 50%;
+}
+
+.container__cards__1__draw__icon, .container__cards__2__draw__icon, .container__cards__3__draw__icon {
+    position: relative;
+    top: 35px;
 }
 
 .container__text {
