@@ -1,0 +1,7 @@
+Ottimo lavoro, il sito è identico! In entrambe le versioni!
+Sono contento che tu abbia fatto la versione 2, si vede che hai capito che potevi semplificare la struttura
+dell'html rimuovendo il grosso dei div. Le strutture html più innestate sono più difficili sono da capire.
+
+Il tuo prossimo sito da scopiazzare:
+https://nicepage.com/html-templates/preview/digital-firm-3754173?device=desktop
+
