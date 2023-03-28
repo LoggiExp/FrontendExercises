@@ -7,4 +7,15 @@ function reverseArray(a) {
     return reverseA;
 }
 
+// esercizio 2:
+function simpleArraySum(ar) {
+    let sum = 0;
+    for (const element of ar) {
+        sum += element;
+    }
+    return sum;
+}
 
+function simpleArraySum(ar) {
+    return ar.reduce((total, element) => total + element);
+}
