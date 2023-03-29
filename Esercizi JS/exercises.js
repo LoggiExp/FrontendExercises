@@ -46,3 +46,17 @@ function divisibleSumPairs(n, k, ar) {
     }
     return count;
 }
+// esercizio 5:
+function compareTriplets(a, b) {
+    let aCount = 0;
+    let bCount = 0;
+    for (let i = 0; i<a.length; i++) {
+        if(a[i] > b[i]){
+            aCount+=1;
+        }
+        else if(a[i] < b[i]){
+            bCount+=1;
+        }
+    }
+    return [aCount, bCount]
+}
