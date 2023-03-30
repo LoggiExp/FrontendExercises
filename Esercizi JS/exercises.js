@@ -60,3 +60,33 @@ function compareTriplets(a, b) {
     }
     return [aCount, bCount]
 }
+// esercizio 6: 
+function hourglassSum(arr) {
+    let max = [];
+    for (let i = 0; i < arr.length - 2; i++){
+        for (let j = 0; j < arr[i].length - 2; i++){
+            max.push(arr[i][j] + arr[i][j + 1] + arr[i][j + 2] +
+            arr[i + 1][j + 1] +
+            arr[i + 2][j] + arr[i + 2][j + 1] + arr[i + 2][j + 2]); 
+        }
+    }
+    return Math.max(...max)
+}
+// esercizio intermediate: https://www.hackerrank.com/challenges/non-divisible-subset/problem?isFullScreen=false
+// 7 su 17 test passati, da rendere più efficiente
+function nonDivisibleSubset(k, s) {
+    let maxDivisibleArr = [];
+    
+    for (let i = 0; i < s.length; i++){
+        let possibleMaxDivisibleArr = [];
+        possibleMaxDivisibleArr.push(s[i]);
+        
+        for (let j = i + 1; j<s.length; j++){
+           if (possibleMaxDivisibleArr.every(element => (element + s[j])%k)){
+                possibleMaxDivisibleArr.push(s[j]);
+           }
+        }
+        maxDivisibleArr.push(possibleMaxDivisibleArr.length);
+    }
+    return Math.max(...maxDivisibleArr);
+}
