@@ -1,5 +1,6 @@
 const title = document.createElement('h1');
 const userTable = document.createElement('table');
+const form = document.createElement('form');
 
 title.textContent = "Lista Utenti:";
 document.body.appendChild(title);
@@ -43,7 +44,37 @@ function createTableBody(table) {
   })
 }
 
+function createForm(form) {
+  form.setAttribute('action', 'https://jsonplaceholder.typicode.com/users');
+  form.setAttribute('method', 'post');
+  let title = document.createElement('h1');
+  title.textContent = 'Aggiungi utente:'
+  form.appendChild(title);
+  document.body.appendChild(form);
+  let inputName = document.createElement('input');
+  inputName.setAttribute('placeholder', 'Name');
+  form.appendChild(inputName);
+  let inputUsername = document.createElement('input');
+  inputUsername.setAttribute('placeholder', 'Username');
+  form.appendChild(inputUsername);
+  let inputEmail = document.createElement('input');
+  inputEmail.setAttribute('placeholder', 'Email');
+  form.appendChild(inputEmail);
+  let inputPhone = document.createElement('input');
+  inputPhone.setAttribute('placeholder', 'Phone');
+  form.appendChild(inputPhone);
+  let resetButton = document.createElement('button');
+  resetButton.setAttribute('type', 'reset');
+  resetButton.textContent = 'Reset';
+  form.appendChild(resetButton);
+  let submitButton = document.createElement('button');
+  submitButton.setAttribute('type', 'submit');
+  submitButton.textContent = 'Submit';
+  form.appendChild(submitButton);
+}
+
 createTableHead(userTable);
 createTableBody(userTable);
+createForm(form);
 
 
