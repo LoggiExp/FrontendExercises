@@ -3,12 +3,12 @@
     <mat-icon>add</mat-icon>
   </button>
   <h3> {{ counter }} </h3>
-  <button mat-fab (click)="removeCounter()">
+  <button mat-fab (click)="removeCounter()" *ngIf="counter < 17">
     <mat-icon>remove</mat-icon>
   </button>
 </div>
 <div>
   <p *ngIf="counter >= 5 && counter < 10">Eccoci... e ora?</p>
   <p *ngIf="counter >= 10 && counter < 17">Ehm... basta ok?</p>
-  <p *ngIf="counter >= 17">Ecco.. lo hai rotto...</p>
+  <p *ngIf="counter >= 17" (click)="resetCounter()">Ecco.. lo hai rotto...<br>Dai cliccami...</p>
 </div>

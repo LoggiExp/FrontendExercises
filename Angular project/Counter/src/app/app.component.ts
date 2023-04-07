@@ -16,5 +16,9 @@ export class AppComponent {
   removeCounter() {
     this.counter--;
   }
+
+  resetCounter() {
+    this.counter = 0;
+  }
 }
 
