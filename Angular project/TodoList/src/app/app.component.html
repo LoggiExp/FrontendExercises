@@ -1,0 +1,18 @@
+<body>
+  <h1>Todo List</h1>
+  <div>
+    <mat-form-field>
+      <mat-label>Insert new element</mat-label>
+      <input mat-input type="text" [(ngModel)]="value">
+      <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+      </button>
+      <button mat-icon-button (click)="addToList()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <ul>
+    <li></li>
+  </ul>
+</body>
