@@ -100,24 +100,9 @@ function deleteUser(id) {
   })
     .then((response) => {
       if (response.ok) {
-        userTable.deleteRow(sum([id, 1]))
+        userTable.deleteRow(Number(id) + 1)
       }
     })
-}
-
-function sum(input) {
-
-  if (!Array.isArray(input))
-    return false;
-
-  var total = 0;
-  for (var i = 0; i < input.length; i++) {
-    if (isNaN(input[i])) {
-      continue;
-    }
-    total += Number(input[i]);
-  }
-  return total;
 }
 
 createTableHead(userTable);
