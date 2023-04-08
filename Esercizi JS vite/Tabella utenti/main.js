@@ -54,33 +54,25 @@ function createForm(form) {
   title.textContent = 'Aggiungi utente:'
   form.appendChild(title);
   document.body.appendChild(form);
-  let inputName = document.createElement('input');
-  inputName.setAttribute('placeholder', 'Name');
-  inputName.setAttribute('name', 'Name');
-  form.appendChild(inputName);
-  let inputUsername = document.createElement('input');
-  inputUsername.setAttribute('placeholder', 'Username');
-  inputUsername.setAttribute('name', 'Username');
-  form.appendChild(inputUsername);
-  let inputEmail = document.createElement('input');
-  inputEmail.setAttribute('placeholder', 'Email');
-  inputEmail.setAttribute('name', 'Email');
-  form.appendChild(inputEmail);
-  let inputPhone = document.createElement('input');
-  inputPhone.setAttribute('placeholder', 'Phone');
-  inputPhone.setAttribute('name', 'Phone');
-  form.appendChild(inputPhone);
+  const inputFields = ['Name', 'Username', 'Email', 'Phone'].map((fieldName) => {
+    const input = document.createElement('input');
+    input.setAttribute('placeholder', fieldName);
+    input.setAttribute('name', fieldName);
+    return input
+  })
+  inputFields.forEach(input => form.appendChild(input))
+
   let resetButton = document.createElement('button');
   resetButton.setAttribute('type', 'reset');
   resetButton.textContent = 'Reset';
   form.appendChild(resetButton);
   let submitButton = document.createElement('button');
   submitButton.textContent = 'Submit';
-  submitButton.addEventListener('click', () => submitForm(form, inputName, inputUsername, inputEmail, inputPhone));
+  submitButton.addEventListener('click', () => submitForm(form, inputFields));
   document.body.appendChild(submitButton);
 }
 
-function submitForm(form, inputName, inputUsername, inputEmail, inputPhone) {
+function submitForm(form, [inputName, inputUsername, inputEmail, inputPhone]) {
   let newUser = [{ Name: inputName.value, Username: inputUsername.value, Email: inputEmail.value, Phone: inputPhone.value }]
   fetch('https://jsonplaceholder.typicode.com/users', { method: 'post', body: form })
     .then((response) => {
@@ -92,23 +84,12 @@ function submitForm(form, inputName, inputUsername, inputEmail, inputPhone) {
 }
 
 function refreshTable(newUser) {
-  // let rows = userTable.rows.length;
-  // for (let i = 1; i < rows; i++){
-  //   userTable.deleteRow(1);
-  // }
-  // createTableBody(userTable);
-  //visto che non viene aggiunto veramente nel db un uovo utente, lo agigungo manualmente e rimuovo il refresh in modo da poterne metter epiù di uno.
   let newUserRow = userTable.insertRow()
+  for (const userField of Object.values(newUser)) {
+    const cell = newUserRow.insertCell();
+    cell.textContent = userField; 
+  }
   console.log(newUser);
-
-  let cell1 = newUserRow.insertCell();
-  let cell2 = newUserRow.insertCell();
-  let cell3 = newUserRow.insertCell();
-  let cell4 = newUserRow.insertCell();
-  cell1.textContent = newUser.Name;
-  cell2.textContent = newUser.Username;
-  cell3.textContent = newUser.Email;
-  cell4.textContent = newUser.Phone;
 }
 
 // bug: si cancella la riga ma il numero massimo rimane 10, dopo la prima eliminazione cancella quello sbagliato
