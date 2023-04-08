@@ -1,0 +1,17 @@
+complimenti! Mi piace moltissimo come hai nominato le funzioni!
+Quando apro un file e in 5 secondi capisco come funziona l'applicazione sono felice.
+
+Ci sono alcune cose che potresti migliorare.
+Quando una funzione ha tanti parametri, meglio passare un oggetto. Rende piu facile cambiare i campi, perchè non devi rispettare un ordine preciso.
+
+Nelle funzioni c'è un po' di duplicazione. Fai caso ai "trucchetti" che ho usato per rimuoverla.
+
+C'è un po' di confusione tra id e indice della tabella. 
+Sarebbe necessario creare un id per ogni record che viene aggiunto a seguito della chiamata post in modo tale da rintracciare 
+l'indice della riga da rimuovere.
+Nel tuo caso il problema è che alcune volte l'id coincide con l'indice e quindi a volte rimuovere una riga "funziona" altre volte invece no.
+Quando tu fai la chiamata POST fai caso che questa ti restituisce l'id dell'elemento creato. 
+(In uno scenario reale questo sarebbe un numero sempre diverso mentre qui è sempre 11).
+In genere infatti l'id lo genera il backend.
+Questo id sarebbe poi utilizzabile per eseguire operazioni sullo stesso record. In sintesi, id !== index.
+
