@@ -107,7 +107,7 @@ function deleteUser(id) {
 
 function sum(input) {
 
-  if (toString.call(input) !== "[object Array]")
+  if (!Array.isArray(input))
     return false;
 
   var total = 0;
