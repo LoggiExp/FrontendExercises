@@ -50,8 +50,6 @@ function createTableBody(table) {
 }
 
 function createForm(form) {
-  form.setAttribute('action', 'https://jsonplaceholder.typicode.com/users');
-  form.setAttribute('method', 'post');
   let title = document.createElement('h1');
   title.textContent = 'Aggiungi utente:'
   form.appendChild(title);
