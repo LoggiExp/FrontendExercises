@@ -10,6 +10,6 @@
     </mat-form-field>
   </div>
   <ul>
-    <li *ngFor="let elements of list">{{elements}}</li>
+    <li *ngFor="let element of list" (click)="isChecked()" (dblclick)="listRemove(element)">{{element}}</li>
   </ul>
 </body>
