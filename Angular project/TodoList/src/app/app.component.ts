@@ -1,5 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
+type Element = {
+  content: string,
+  isChecked: boolean
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,23 +12,27 @@ import { Component, Input } from '@angular/core';
 export class AppComponent {
   title = 'todoList';
   value = '';
-  list: string[] = [];
-  checkedState = false;
+  list: Element[] = [];
   
   addToList(value: string) {
-    this.list.push(value);
+    let newElement: Element = {content: value, isChecked: false};
+    this.list.push(newElement);
     this.value = '';
   }
   
   listRemove(element: string) {
     for(let i = 0; i < this.list.length; i++){
-      if (this.list[i] === element){
+      if (this.list[i].content === element){
         this.list = this.list.slice(0, i).concat(this.list.slice(i + 1))
       }
     }
   }
 
-  isChecked(){
-    this.checkedState = !this.checkedState;
+  isChecked(element: string){
+    for(let i = 0; i < this.list.length; i++){
+      if (this.list[i].content === element){
+       this.list[i].isChecked = !this.list[i].isChecked;
+      }
+    }
   }
 }

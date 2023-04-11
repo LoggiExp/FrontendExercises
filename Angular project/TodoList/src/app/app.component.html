@@ -10,6 +10,6 @@
     </mat-form-field>
   </div>
   <ul>
-    <li *ngFor="let element of list" (click)="isChecked()" (dblclick)="listRemove(element)">{{element}}</li>
+    <li [ngClass]="{'checked': element.isChecked === true }" *ngFor="let element of list" (click)="isChecked(element.content)" (dblclick)="listRemove(element.content)">{{element.content}}</li>
   </ul>
 </body>
