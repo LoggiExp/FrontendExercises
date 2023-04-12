@@ -17,9 +17,7 @@ export class UserService {
   }
 
   getUsersbyId(id: number) {
-    return this.getUsers().pipe(
-      map((users) => users.filter((user) => user.id === id))
-    );
+    return this.getUsers().pipe(map((users) => users[id]));
   }
 
   getPosts() {
