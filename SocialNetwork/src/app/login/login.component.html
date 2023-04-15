@@ -1,1 +1,11 @@
-<p>login works!</p>
+<div role="group" [formGroup]="loginControl">
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="emailControl" [email]="true">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="passwordControl">
+    </mat-form-field>
+    <button mat-button [disabled]="loginControl.invalid" (click)="login()">Login</button>
+</div>
