@@ -1,0 +1,8 @@
+<div *ngIf="users$ | async as users">
+    <mat-form-field>
+        <mat-select [(value)]="selected">
+            <mat-option *ngFor="let user of users" [value]="user.id">{{ user.name }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<button mat-button (click)="showProfile()">Show</button>
