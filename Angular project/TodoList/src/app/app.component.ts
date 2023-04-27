@@ -23,7 +23,7 @@ export class AppComponent {
   listRemove(element: string) {
     for(let i = 0; i < this.list.length; i++){
       if (this.list[i].content === element){
-        this.list = this.list.slice(0, i).concat(this.list.slice(i + 1))
+        this.list.splice(i, 1)
       }
     }
   }
