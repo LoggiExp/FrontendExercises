@@ -12,6 +12,6 @@
     </div>
   </form>
   <ul>
-    <li [ngClass]="{'checked': element.isChecked === true }" *ngFor="let element of list" (click)="isChecked(element.content)" (dblclick)="listRemove(element.content)">{{element.content}}</li>
+    <li [ngClass]="{'checked': element.isChecked }" *ngFor="let element of list" (click)="checkElement(element.content)" (dblclick)="listRemove(element.content)">{{element.content}}</li>
   </ul>
 </body>

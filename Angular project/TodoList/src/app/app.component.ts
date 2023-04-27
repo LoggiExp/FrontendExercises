@@ -28,7 +28,7 @@ export class AppComponent {
     }
   }
 
-  isChecked(element: string){
+  checkElement(element: string){
     for(let i = 0; i < this.list.length; i++){
       if (this.list[i].content === element){
        this.list[i].isChecked = !this.list[i].isChecked;
