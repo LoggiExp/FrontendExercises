@@ -4,14 +4,26 @@
     <div>
       <mat-form-field>
         <mat-label>Type here</mat-label>
-        <input matInput type="text" [(ngModel)]="value" name="todo">
-        <button *ngIf="value" matSuffix mat-icon-button aria-label="Add to list">
+        <input matInput type="text" [(ngModel)]="value" name="todo" />
+        <button
+          *ngIf="value"
+          matSuffix
+          mat-icon-button
+          aria-label="Add to list"
+        >
           <mat-icon>add</mat-icon>
         </button>
       </mat-form-field>
     </div>
   </form>
   <ul>
-    <li [ngClass]="{'checked': element.isChecked }" *ngFor="let element of list" (click)="checkElement(element.content)" (dblclick)="listRemove(element.content)">{{element.content}}</li>
+    <li
+      [ngClass]="{ checked: element.isChecked }"
+      *ngFor="let element of list"
+      (click)="checkElement(element.content)"
+      (dblclick)="listRemove(element.content)"
+    >
+      {{ element.content }}
+    </li>
   </ul>
 </body>
