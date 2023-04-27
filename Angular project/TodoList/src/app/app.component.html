@@ -19,9 +19,9 @@
   <ul>
     <li
       [ngClass]="{ checked: element.isChecked }"
-      *ngFor="let element of list"
-      (click)="checkElement(element.content)"
-      (dblclick)="listRemove(element.content)"
+      *ngFor="let element of list; let i = index"
+      (click)="checkElement(element)"
+      (dblclick)="listRemove(i)"
     >
       {{ element.content }}
     </li>

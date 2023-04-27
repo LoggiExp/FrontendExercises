@@ -20,19 +20,11 @@ export class AppComponent {
     this.value = '';
   }
   
-  listRemove(element: string) {
-    for(let i = 0; i < this.list.length; i++){
-      if (this.list[i].content === element){
-        this.list.splice(i, 1)
-      }
-    }
+  listRemove(i: number) {
+    this.list.splice(i, 1)
   }
 
-  checkElement(element: string){
-    for(let i = 0; i < this.list.length; i++){
-      if (this.list[i].content === element){
-       this.list[i].isChecked = !this.list[i].isChecked;
-      }
-    }
+  checkElement(element: Element){
+    element.isChecked = !element.isChecked;
   }
 }
