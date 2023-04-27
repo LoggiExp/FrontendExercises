@@ -1,14 +1,16 @@
 <body>
   <h1>Todo List</h1>
-  <div>
-    <mat-form-field>
-      <mat-label>Type here</mat-label>
-      <input matInput type="text" [(ngModel)]="value">
-      <button *ngIf="value" matSuffix mat-icon-button aria-label="Add to list" (click)="addToList(value)">
-        <mat-icon>add</mat-icon>
-      </button>
-    </mat-form-field>
-  </div>
+  <form (ngSubmit)="addToList(value)">
+    <div>
+      <mat-form-field>
+        <mat-label>Type here</mat-label>
+        <input matInput type="text" [(ngModel)]="value" name="todo">
+        <button *ngIf="value" matSuffix mat-icon-button aria-label="Add to list">
+          <mat-icon>add</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </form>
   <ul>
     <li [ngClass]="{'checked': element.isChecked === true }" *ngFor="let element of list" (click)="isChecked(element.content)" (dblclick)="listRemove(element.content)">{{element.content}}</li>
   </ul>
